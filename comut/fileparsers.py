@@ -25,12 +25,12 @@ def parse_maf(maf_df, variants=None, rename=None):
 
     # default to nonsilent variants
     if variants is None:
-        variants = ['Nonsense_Mutation', 'In_Frame_Del', 'Frame_Shift_Ins', 'Splice_Site', 'In_Frame_Ins', 'Frame_Shift_Del', 'Missense_Mutation']
+        variants = ['Nonsense_Mutation', 'In_Frame_Del', 'Frame_Shift_Ins', 'Splice_Site', 'In_Frame_Ins', 'Frame_Shift_Del', 'Missense_Mutation', 'Gain', 'Loss']
 
     # default rename is to collapse ins and del to indel
     if rename is None:
         rename = {'Nonsense_Mutation': 'Nonsense', 'In_Frame_Del': 'In frame indel', 'In_Frame_Ins': 'In frame indel',
-                  'Frame_Shift_Del': 'Frameshift indel', 'Missense_Mutation': 'Missense', 'Splice_Site': 'Splice site', 'Frame_Shift_Ins': 'Frameshift indel'}
+                  'Frame_Shift_Del': 'Frameshift indel', 'Missense_Mutation': 'Missense', 'Splice_Site': 'Splice site', 'Frame_Shift_Ins': 'Frameshift indel', 'Gain', 'Loss'}
 
     # subset to required columns
     subset_maf_df = maf_df[['Tumor_Sample_Barcode', 'Hugo_Symbol', 'Variant_Classification']]
